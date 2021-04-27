@@ -1,28 +1,27 @@
 const path = require('path');
 
 module.exports = {
-    entry: './widgets.jsx',
+    entry: './frontend/widgets.jsx',
     output: {
-        //path requires absolute path 
         path: path.resolve(__dirname),
-        filename: 'bundle.js'
-    },
-    devtool: 'source-map',
-    resolve: {
-        extensions: [".js", ".jsx", "*"]
+        filename: './dist/bundle.js'
     },
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: [/\.jsx?$/],
                 exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/env', '@babel/react'] //which presets to run
+                        presets: ['@babel/env', '@babel/react']
                     }
                 },
             }
         ]
+    },
+    devtool: 'source-map',
+    resolve: {
+        extensions: ['.js', '.jsx', '*']
     }
-}
+};
