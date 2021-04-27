@@ -4,6 +4,6 @@ import Clock from "./clock";
 
 document.addEventListener("DOMContentLoaded", () => {
     const main = document.getElementById("main");
-    const root = <div><Clock /></div>;
+    const root = <Clock />;
     ReactDOM.render(root, main);
 });
